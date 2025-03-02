@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xml-sign
+  labels:
+    app: xml-sign
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xml-sign
+  template:
+    metadata:
+      labels:
+        app: xml-sign
+    spec:
+      containers:
+      - name: xml-sign
+        image: ghcr.io/mind-informatica-srl/xml-sign:v1.0.0
